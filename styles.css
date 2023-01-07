@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Permanent Marker', cursive;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:radial-gradient(#27ba7a,#01420d);
+}
+
+.main-container{
+  /*para las pruebas*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:radial-gradient(#27ba7a,#01420d);
+  /*********************************************/
+
+  font-family: 'Permanent Marker', cursive;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-weight: 700;
+  /*cursor: pointer;*/
+  transform: all 5000ms ease-in-out;
+
+
+}
+
+.main-container .tab{
+  width: 5vw;
+}
+
+/*.main-container .word::before{
+  content: var(--effect);
+  position: absolute;
+  transform: scale(1.1);
+  filter: blur(25px);
+}
+
+.main-container .word::after{
+  content: var(--effect);
+  position: absolute;
+  top: 40%;
+  left: 0;
+  filter: blur(35px);
+  transform: rotateX(50deg);
+}*/
+
+.main-container .word:hover{
+  filter: contrast(250%);
+}
+
+.main-container .word, span{
+  font-family: 'Permanent Marker', cursive;
+  color: #eee;
+  text-align: center;
+  -webkit-box-reflect:below 1px linear-gradient(transparent,#0008);
+  line-height: 0.70em;
+  outline: none;
+  cursor: pointer;
+  animation: light 10s linear infinite;
+
+  /*text-shadow: 5px 25px #0008;*/
+}
+
+.main-container h3:hover,span:hover{
+
+  animation: smoke 3.6s infinite linear;
+  /*transform-origin: bottom;*/
+  transform: 3.6s;
+  /*text-shadow: 5px 25px #0008;*/
+}
+
+@keyframes light {
+
+  0%,10%,20%,30%,40%,50%,60%,70%,80%,90%,99%{
+    color: #036b20;
+    box-shadow: none;
+  }
+
+  10.2%,20.2%,30.2%,40.2%,50.2%,60.2%,70.2%,80.2%,90.2%,100%{
+    color: #eee;
+    text-shadow: 0 0 10px #08d1a5,
+                0 0 20px #08d1a5,
+                0 0 40px #08d1a5,
+                0 0 60px #08d1a5,
+                0 0 80px #08d1a5,
+                0 0 110px #08d1a5;
+  }
+}
+
+@keyframes smoke {
+  0%{
+
+    opacity: 1;
+    color: #999;
+    filter: blur(0);
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+  }
+
+  50%{
+    opacity: 1;
+    color: #aaa;
+    pointer-events: none;
+  }
+  100%{
+
+    opacity: 0;
+    color: #bbb;
+    filter: blur(50px);
+    /*transform: translate(40vw,-40vh);*/
+    transform: translateX(200px) translateY(-300px) rotate(10deg) scale(3);
+  }
+}
